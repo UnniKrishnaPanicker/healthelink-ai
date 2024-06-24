@@ -1,0 +1,14 @@
+FROM postgres:16
+
+ENV PGTAP_VERSION v1.1.0
+
+RUN apt-get update && \
+    apt-get install -y git make && \
+    rm -rf /var/lib/apt/lists/*
+
+RUN git clone https://github.com/theory/pgtap.git /tmp/pgtap && \
+    cd /tmp/pgtap && git checkout tags/$PGTAP_VERSION && make install
+
+RUN rm -rf /tmp/pgtap
+
+CMD ["postgres"]

@@ -1,0 +1,11 @@
+From python:3.10.12
+RUN apt-get update && \
+    apt-get install -y git
+RUN git clone https://github.com/netspective-labs/vanna-ai-flask.git
+WORKDIR vanna-ai-flask
+RUN ls -la
+COPY .env .
+RUN pip install -r requirements.txt
+RUN pip install chromadb vanna[postgres] gevent
+CMD ["python", "app.py"]
+

@@ -1,0 +1,17 @@
+version: '3.3'
+services:
+  glide:
+    image: ghcr.io/einstack/glide:latest-alpine
+    container_name: glide
+    command: --config /bin/config.yaml
+    ports:
+      - 9099:9099
+    volumes:
+      - ./config.yaml:/bin/config.yaml
+      - ./secrets/:/bin/secrets/
+    networks:
+      - "network"
+networks:
+  network:
+   external:
+    name: appliance

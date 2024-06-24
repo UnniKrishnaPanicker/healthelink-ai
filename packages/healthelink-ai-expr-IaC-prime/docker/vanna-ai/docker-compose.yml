@@ -1,0 +1,36 @@
+version: '3.3'
+services:
+  vanna-ai:
+    container_name: vanna-ai
+    restart: always
+    build:
+      context: .
+      dockerfile: Dockerfile-vanna-ai
+    ports:
+      - 8087:5000
+    networks:
+      - network
+  
+  postgres:
+    container_name: vanna-ai-postgres
+    restart: always
+    build:
+      context: .
+      dockerfile: Dockerfile-postgres
+    ports:
+       - 8553:5432
+    environment:
+      - POSTGRES_USER=${POSTGRES_USER}
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
+      - POSTGRES_DB=${POSTGRES_DATABASE}
+    volumes:
+       - vanna-ai-postgres-data:/var/lib/postgresql/data     
+    networks:
+       - network
+volumes:
+     vanna-ai-postgres-data: {}
+
+networks:
+  network:
+    external:
+      name: appliance 

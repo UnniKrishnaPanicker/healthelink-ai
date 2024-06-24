@@ -1,0 +1,43 @@
+{
+  "name": "healthelink_ai_experiment",
+  "version": "0.0.0",
+  "license": "MIT",
+  "type": "module",
+  "scripts": {
+    "gpm_dev": "npx nx run healthelink.ai_experiment_gpm:dev",
+    "gpm_build": "npx nx run healthelink.ai_experiment_gpm:build",
+    "gpm_preview": "npx nx run healthelink.ai_experiment_gpm:preview",
+    "docker_deploy": "npx nx run healthelink-ai-expr-IaC-prime:docker_deploy",
+    "deploy": "npx nx run healthelink-ai-expr-IaC-prime:deploy",
+    "prepare": "husky install",
+    "lint-staged": "eslint \"**/*.{js,jsx,ts,tsx,astro,md}\" --quiet --fix && prettier \"**/*.{cjs,js,jsx,ts,tsx}\" --write"
+  },
+  "private": true,
+  "devDependencies": {
+    "@commitlint/cli": "^17.7.2",
+    "@commitlint/config-conventional": "^17.7.0",
+    "@nx/js": "19.1.1",
+    "@typescript-eslint/eslint-plugin": "^6.7.4",
+    "@typescript-eslint/parser": "^6.7.4",
+    "eslint": "^8.51.0",
+    "eslint-config-prettier": "^9.0.0",
+    "eslint-plugin-astro": "^0.29.1",
+    "eslint-plugin-jsx-a11y": "^6.7.1",
+    "eslint-plugin-mdx": "^2.2.0",
+    "eslint-plugin-prettier": "^5.0.0",
+    "eslint-plugin-unicorn": "^48.0.1",
+    "globals": "^15.3.0",
+    "husky": "^8.0.3",
+    "lint-staged": "^14.0.1",
+    "markdownlint-cli": "^0.37.0",
+    "nx": "19.1.1",
+    "prettier": "^3.0.3",
+    "prettier-eslint": "^15.0.1",
+    "prettier-plugin-astro": "^0.12.0",
+    "remark-mdx": "^2.3.0",
+    "typescript": "^5.2.2"
+  },
+  "workspaces": [
+    "packages/*"
+  ]
+}

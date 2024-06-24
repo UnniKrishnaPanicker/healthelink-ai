@@ -1,0 +1,129 @@
+ok 1 — SEO Test Suite › FII-OPSU-QA-SEO-0001_Opsfolio-Policy page navigation and title check
+ok 2 — SEO Test Suite › FII-OPSU-QA-SEO-0002_Opsfolio-Audit page navigation and title check
+not ok 3 ● SEO Test Suite › FII-OPSU-QA-SEO-0003_Opsfolio-Portfolio page navigation and title check
+#   
+#   [2massert[22m[2m.strictEqual([22m[31mreceived[39m[2m, [22m[32mexpected[39m[2m)[22m
+#   
+#   
+#   [0mExpected value to strictly be equal to:[0m
+#   [0m[0m  [32m"Opsfolio - Portfolio"[39m
+#   [0mReceived:[0m
+#   [0m[0m  [31m"Opsfolio"[39m[0m[0m
+#   [0m[0m
+#   [0mMessage:[0m
+#   [0m  expected 'Opsfolio' to equal 'Opsfolio - Portfolio'[0m
+#   
+#   Difference:
+#       
+#       [32m- Expected[39m
+#       [31m+ Received[39m
+#       
+#       [32m- Opsfolio - Portfolio[39m
+#       [31m+ Opsfolio[39m
+#   
+#   Stack:
+#   
+#       at Object.<anonymous> (tests/homePage.test.ts:39:22)
+#   
+#             35 | 
+#             36 |   test("FII-OPSU-QA-SEO-0003_Opsfolio-Portfolio page navigation and title check", async () => {
+#             37 |     await homePage.navigate("http://localhost:4321/portfolio");
+#             38 |     const title = await homePage.getTitle();
+#           > 39 |     expect(title).to.equal("Opsfolio - Portfolio");
+#                |                      ^
+#             40 |   });
+#             41 | 
+#             42 |   test("FII-OPSU-QA-SEO-0004_Opsfolio-Observability page navigation and title check", async () => {
+#   
+not ok 4 ● SEO Test Suite › FII-OPSU-QA-SEO-0004_Opsfolio-Observability page navigation and title check
+#   
+#   [2massert[22m[2m.strictEqual([22m[31mreceived[39m[2m, [22m[32mexpected[39m[2m)[22m
+#   
+#   
+#   [0mExpected value to strictly be equal to:[0m
+#   [0m[0m  [32m"Opsfolio-Observability"[39m
+#   [0mReceived:[0m
+#   [0m[0m  [31m"Opsfolio - Audit"[39m[0m[0m
+#   [0m[0m
+#   [0mMessage:[0m
+#   [0m  expected 'Opsfolio - Audit' to equal 'Opsfolio-Observability'[0m
+#   
+#   Difference:
+#       
+#       [32m- Expected[39m
+#       [31m+ Received[39m
+#       
+#       [32m- Opsfolio-Observability[39m
+#       [31m+ Opsfolio - Audit[39m
+#   
+#   Stack:
+#   
+#       at Object.<anonymous> (tests/homePage.test.ts:45:22)
+#   
+#             41 | 
+#             42 |   test("FII-OPSU-QA-SEO-0004_Opsfolio-Observability page navigation and title check", async () => {
+#             43 |     await homePage.navigate("http://localhost:4321/observability");
+#             44 |     const title = await homePage.getTitle();
+#           > 45 |     expect(title).to.equal("Opsfolio-Observability");
+#                |                      ^
+#             46 |   });
+#             47 |   test("FII-OPSU-QA-SEO-0005_Opsfolio-Controls page response status code check", async () => {
+#             48 |     await homePage.navigate("http://localhost:4321/controls");
+#   
+not ok 5 ● SEO Test Suite › FII-OPSU-QA-SEO-0005_Opsfolio-Controls page response status code check
+#   
+#   [2massert[22m[2m.strictEqual([22m[31mreceived[39m[2m, [22m[32mexpected[39m[2m)[22m
+#   
+#   
+#   [0mExpected value to strictly be equal to:[0m
+#   [0m[0m  [32m"Opsfolio-Controls"[39m
+#   [0mReceived:[0m
+#   [0m[0m  [31m"Opsfolio - Audit"[39m[0m[0m
+#   [0m[0m
+#   [0mMessage:[0m
+#   [0m  expected 'Opsfolio - Audit' to equal 'Opsfolio-Controls'[0m
+#   
+#   Difference:
+#       
+#       [32m- Expected[39m
+#       [31m+ Received[39m
+#       
+#       [32m- Opsfolio-Controls[39m
+#       [31m+ Opsfolio - Audit[39m
+#   
+#   Stack:
+#   
+#       at Object.<anonymous> (tests/homePage.test.ts:50:22)
+#   
+#             46 |   });
+#             47 |   test("FII-OPSU-QA-SEO-0005_Opsfolio-Controls page response status code check", async () => {
+#             48 |     await homePage.navigate("http://localhost:4321/controls");
+#             49 |     const title = await homePage.getTitle();
+#           > 50 |     expect(title).to.equal("Opsfolio-Controls");
+#                |                      ^
+#             51 |   });
+#             52 |   test("FII-OPSU-QA-SEO-0006_Verify <title> tag in HTML head section", async () => {
+#             53 |     const titleCount = await page.$$("head title");
+#   
+ok 6 — SEO Test Suite › FII-OPSU-QA-SEO-0006_Verify <title> tag in HTML head section
+not ok 7 ● SEO Test Suite › FII-OPSU-QA-SEO-0007_Verify site description in left footer of login page
+#   
+#   page.$eval: Error: failed to find element matching selector "//html/body/div[2]/main/p"
+#   
+#   Stack:
+#   
+#       at Object.<anonymous> (tests/homePage.test.ts:58:39)
+#   
+#             54 |     expect(titleCount.length).to.equal(1);
+#             55 |   });
+#             56 | 
+#             57 |   test("FII-OPSU-QA-SEO-0007_Verify site description in left footer of login page", async () => {
+#           > 58 |     const leftFooterText = await page.$eval(
+#                |                                       ^
+#             59 |       "//html/body/div[2]/main/p",
+#             60 |       (element) => element.textContent
+#             61 |     );
+#   
+ok 8 — SEO Test Suite › FII-OPSU-QA-SEO-0008_Verify no unwanted blank spaces in title tags
+ok 9 — SEO Test Suite › FII-OPSU-QA-SEO-0009_Ensure page loads within specified time
+1..9

@@ -1,0 +1,32 @@
+---
+title: HEALTHeLINK™
+description: HEALTHeLINK Governance, Planning and Management (GPM) Home
+template: splash
+hero:
+  tagline: HEALTHeLINK GPM
+  image:
+    file: ../../assets/helthelink-logo.png
+
+  actions:
+    - text: Accomplishments
+      link: /outcomes-center/accomplishments/
+      icon: right-arrow
+      variant: primary
+    - text: GPM News & Updates
+      link: /gpm/activity-log/
+      icon: right-arrow
+    - text: UCC
+      link: /gpm/unified-communications/
+      icon: right-arrow
+---
+
+import { Card, CardGrid } from "@astrojs/starlight/components";
+import News from "./gpm/activity-log.md";
+import UCC from "./gpm/unified-communications.md";
+
+Welcome to HEALTHeLINK _Governance_, _Planning_ and _Management_ (GPM) home.
+
+<details id="gpmActivityLog" data-persist-state="closed">
+  <summary>GPM News & Updates (Activity Log)</summary>
+  <News />
+</details>

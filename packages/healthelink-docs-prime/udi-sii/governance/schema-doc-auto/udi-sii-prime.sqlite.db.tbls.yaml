@@ -1,0 +1,18 @@
+# DSN (Database Source Name) to connect database (use relative paths)
+dsn: sqlite://../../udi-sii-prime.sqlite.db
+
+# Generate in governance/schema-doc-auto/udi-sii-prime.sqlite.db
+docPath: ./udi-sii-prime.sqlite.db
+
+format:
+  # Adjust the column width of Markdown format table
+  adjust: true
+  # Hide table columns without values
+  hideColumnsWithoutValues: ["Parents", "Children"]
+
+er:
+  comment: true
+  # Hide relation definition from ER diagram, set to false to show it
+  hideDef: true
+  # Distance between tables that display relations in the ER
+  distance: 2

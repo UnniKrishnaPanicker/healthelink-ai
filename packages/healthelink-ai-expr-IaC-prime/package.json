@@ -1,0 +1,8 @@
+{
+  "name": "healthelink-ai-expr-IaC-prime",
+  "version": "1.0.0",
+  "scripts": {
+    "docker_deploy": "bash -x install_docker.sh",
+    "deploy": "bash -x deploy.sh"
+  }
+}

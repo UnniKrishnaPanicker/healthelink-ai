@@ -1,0 +1,30 @@
+"version": "3.4"
+
+
+networks:
+  network:
+    external:
+      name: appliance
+
+services:
+  anything-llm:
+    container_name: anything-llm
+    image: mintplexlabs/anythingllm:latest
+    cap_add:
+      - SYS_ADMIN
+    volumes:
+      - "./.env:/app/server/.env"
+      - "./storage:/app/server/storage"
+#      - "../collector/hotdir/:/app/collector/hotdir"
+#      - "../collector/outputs/:/app/collector/outputs"
+    user: "0:0"
+    ports:
+      - "3001:3001"
+    env_file:
+      - .env
+    networks:
+      - "network"
+#    extra_hosts:
+#      - "host.docker.internal:host-gateway"
+    restart: always  # This line ensures the container restarts always
+
